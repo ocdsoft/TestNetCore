@@ -1,8 +1,19 @@
+@model TestNetCore.ViewModels.Home.AboutViewModel
+
 @{
     ViewData["Title"] = "About";
 }
-<h2>@ViewData["Title"].</h2>
-<h3>@ViewData["Message"]</h3>
-<h3>@ViewData["Message2"]</h3>
+<h2>@ViewData["Title"]</h2>
+<h3>@Model.Heading</h3>
+
+@foreach (var developer in Model.Developers)
+{
+    <ul>
+        <li>
+            <h4>@string.Format("Developer: {0}",developer.Name)</h4>
+            <h4>@string.Format("Speciality: {0}", developer.Specialty)</h4>
+        </li>
+    </ul>
+}
 
 <p>Will this show in browser when I save?</p>

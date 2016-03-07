@@ -6,6 +6,11 @@
     "gulp-concat": "2.5.2",
     "gulp-cssmin": "0.1.7",
     "gulp-uglify": "1.2.0",
-    "rimraf": "2.2.8"
+    "rimraf": "2.2.8",
+    "browser-sync": "^2.11.1",
+    "webpack-dnx-browsersync": "^1.0.1"
+  },
+  "dependencies": {
+    "bower": "^1.7.7"
   }
 }

@@ -13,6 +13,7 @@ using Microsoft.Extensions.Logging;
 using TestNetCore.Models;
 using TestNetCore.Services;
 
+
 namespace TestNetCore
 {
     public class Startup
@@ -68,6 +69,7 @@ namespace TestNetCore
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
+                //app.UseBrowserLink();
             }
             else
             {

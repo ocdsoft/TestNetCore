@@ -5,7 +5,10 @@ var gulp = require("gulp"),
   rimraf = require("rimraf"),
   concat = require("gulp-concat"),
   cssmin = require("gulp-cssmin"),
-  uglify = require("gulp-uglify");
+  uglify = require("gulp-uglify"),
+  shell = require("shelljs"),
+  webserver = require("gulp-webserver");
+  
 
 var webroot = "./wwwroot/";
 
@@ -45,3 +48,14 @@ gulp.task("min:css", function () {
 });
 
 gulp.task("min", ["min:js", "min:css"]);
+
+gulp.task('watchDnx', shell.task(['dnx-watch web']));
+
+gulp.task('webserver', function () {
+    gulp.src('app')
+        .pipe(webserver({
+            livereload: true,
+            port: 5000,
+            open: true
+        }));
+});
