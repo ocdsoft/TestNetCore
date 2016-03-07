@@ -12,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using TestNetCore.Models;
 using TestNetCore.Services;
+using Glimpse;
+
 
 
 namespace TestNetCore
@@ -28,7 +30,7 @@ namespace TestNetCore
             if (env.IsDevelopment())
             {
                 // For more details on using the user secret store see http://go.microsoft.com/fwlink/?LinkID=532709
-                builder.AddUserSecrets();
+                builder.AddUserSecrets();                
             }
 
             builder.AddEnvironmentVariables();
@@ -53,6 +55,7 @@ namespace TestNetCore
                 .AddDefaultTokenProviders();
 
             services.AddMvc();
+            services.AddGlimpse();
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
@@ -64,12 +67,13 @@ namespace TestNetCore
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
                 //app.UseBrowserLink();
+                app.UseGlimpse();
             }
             else
             {
