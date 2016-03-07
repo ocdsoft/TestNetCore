@@ -55,7 +55,7 @@ namespace TestNetCore
                 .AddDefaultTokenProviders();
 
             services.AddMvc();
-            services.AddGlimpse();
+            //services.AddGlimpse();
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
@@ -73,7 +73,7 @@ namespace TestNetCore
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
                 //app.UseBrowserLink();
-                app.UseGlimpse();
+                //app.UseGlimpse();
             }
             else
             {
