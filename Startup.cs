@@ -13,8 +13,7 @@ using Microsoft.Extensions.Logging;
 using TestNetCore.Models;
 using TestNetCore.Services;
 using Glimpse;
-
-
+using System.Diagnostics;
 
 namespace TestNetCore
 {
@@ -22,7 +21,7 @@ namespace TestNetCore
     {
         public Startup(IHostingEnvironment env, IApplicationEnvironment appEnv)
         {
-            // Set up configuration sources.
+            // Set up configuration sources.            
             var builder = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
