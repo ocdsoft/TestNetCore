@@ -55,7 +55,7 @@ namespace TestNetCore
                 .AddDefaultTokenProviders();
 
             services.AddMvc();
-            //services.AddGlimpse();
+            services.AddGlimpse();
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
@@ -73,12 +73,12 @@ namespace TestNetCore
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
                 //app.UseBrowserLink();
-                //app.UseGlimpse();
+                app.UseGlimpse();
             }
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-
+                app.UseGlimpse();
                 // For more details on creating database during deployment see http://go.microsoft.com/fwlink/?LinkID=615859
                 try
                 {
