@@ -49,13 +49,13 @@ gulp.task("min:css", function () {
 
 gulp.task("min", ["min:js", "min:css"]);
 
-gulp.task('watchDnx', shell.task(['dnx-watch web']));
+//gulp.task('watchDnx', shell.task(['dnx-watch web']));
 
-gulp.task('webserver', function () {
-    gulp.src('app')
-        .pipe(webserver({
-            livereload: true,
-            port: 5000,
-            open: true
-        }));
-});
+//gulp.task('webserver', function () {
+//    gulp.src('app')
+//        .pipe(webserver({
+//            livereload: true,
+//            port: 5000,
+//            open: true
+//        }));
+//});
